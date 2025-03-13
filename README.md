@@ -16,9 +16,11 @@ This package is a **[unified][unified]** (**[rehype][rehype]**) plugin **to copy
 
 ## When should I use this?
 
-The plugin **`rehype-code-meta`** is useful if you use **[rehype-raw][rehype-raw]** hence **[hast-util-raw][hast-util-raw]** since it destroys the `code.data.meta`. Use **`rehype-code-meta`** to copy `code.data.meta` to `code.properties.metastring` to preserve tha data before `rehype-raw` and `hast-util-raw`.
+The plugin **`rehype-code-meta`** is useful if you use **[rehype-raw][rehype-raw]** hence **[hast-util-raw][hast-util-raw]** since it destroys the `code.data.meta`. Use **`rehype-code-meta`** to copy `code.data.meta` to `code.properties.metastring` to preserve tha data before **`rehype-raw`** and **`hast-util-raw`**.
 
-Because, some `rehype` plugins utilize the information in the `code.data.meta`. Since `rehype-raw` destroys it, that `rehype` plugins also utilize `code.properties.metastring` in case `rehype-raw` is in the plugin chain.
+Some `rehype` plugins utilize the information in the `code.data.meta`. Since **`rehype-raw`** destroys it, that `rehype` plugins also utilize `code.properties.metastring` in case **`rehype-raw`** is in the plugin chain.
+
+Don't forget to remove `code.properties.metastring` in the end. The `rehype` plugins that utilize `code.properties.metastring` already remove it in most cases, hence you don't need to do anything.
 
 ## Installation
 
@@ -36,7 +38,7 @@ yarn add rehype-code-meta
 
 ## Usage
 
-Say we have the following markdown file, `example.md`, and you want to add line numbering to the code via `rehype-highlight-code-lines`.
+Say we have the following markdown file, `example.md`, and you want to add line numbering to the code via **`rehype-highlight-code-lines`**.
 
 ````markdown
 ```javascript showLineNumbers
@@ -71,7 +73,7 @@ async function main() {
 }
 ```
 
-Now, running `node example.js` you see that the code lines are numbered thanks to **`rehype-code-meta`**. Otherwise, without **`rehype-code-meta`**, the `rehype-highlight-code-lines` can't find the information `showLineNumbers` in the `code.data.meta`.
+Now, running `node example.js` you see that the code lines are numbered thanks to **`rehype-code-meta`**. Otherwise, without **`rehype-code-meta`**, the **`rehype-highlight-code-lines`** can't find the information `showLineNumbers` in the `code.data.meta` due to **`rehype-raw`**.
 
 ## Options
 
@@ -121,7 +123,7 @@ I like to contribute the Unified / Remark / MDX ecosystem, so I recommend you to
 - [`rehype-highlight-code-lines`](https://www.npmjs.com/package/rehype-highlight-code-lines)
   – Rehype plugin to add line numbers to code blocks and allow highlighting of desired code lines
 - [`rehype-code-meta`](https://www.npmjs.com/package/rehype-code-meta)
-  – Rehype plugin to copy "code.data.meta" to "code.properties.metastring"
+  – Rehype plugin to copy `code.data.meta` to `code.properties.metastring`
 
 ### My Recma Plugins
 
@@ -166,7 +168,7 @@ I like to contribute the Unified / Remark / MDX ecosystem, so I recommend you to
 [badge-typescript]: https://img.shields.io/npm/types/rehype-code-meta
 [url-typescript]: https://www.typescriptlang.org/
 
-[badge-codecov]: https://codecov.io/gh/ipikuka/rehype-code-meta/graph/badge.svg?token=
+[badge-codecov]: https://codecov.io/gh/ipikuka/rehype-code-meta/graph/badge.svg?token=tu0zMSRdrR
 [url-codecov]: https://codecov.io/gh/ipikuka/rehype-code-meta
 
 [badge-type-coverage]: https://img.shields.io/badge/dynamic/json.svg?label=type-coverage&prefix=%E2%89%A5&suffix=%&query=$.typeCoverage.atLeast&uri=https%3A%2F%2Fraw.githubusercontent.com%2Fipikuka%2Frehype-code-meta%2Fmaster%2Fpackage.json
