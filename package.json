@@ -1,0 +1,90 @@
+{
+  "name": "rehype-code-meta",
+  "version": "0.0.1",
+  "description": "Rehype plugin to copy 'code.data.meta' to 'code.properties.metastring'",
+  "type": "module",
+  "exports": "./dist/esm/index.js",
+  "main": "./dist/esm/index.js",
+  "types": "./dist/esm/index.d.ts",
+  "scripts": {
+    "build": "rimraf dist && tsc --build && type-coverage",
+    "format": "npm run prettier && npm run lint",
+    "prettier": "prettier --write .",
+    "lint": "eslint .",
+    "test": "vitest --watch=false",
+    "test:watch": "vitest",
+    "test:file": "vitest test.spec.ts",
+    "prepack": "npm run build",
+    "prepublishOnly": "npm run test && npm run format && npm run test-coverage",
+    "test-coverage": "vitest run --coverage"
+  },
+  "files": [
+    "dist/",
+    "src/",
+    "LICENSE",
+    "README.md"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ipikuka/rehype-code-meta.git"
+  },
+  "keywords": [
+    "unified",
+    "rehype",
+    "hast",
+    "markdown",
+    "mdx",
+    "plugin",
+    "rehype plugin",
+    "rehype code",
+    "code meta",
+    "metastring",
+    "rehype code meta"
+  ],
+  "author": "ipikuka <talatkuyuk@gmail.com>",
+  "license": "MIT",
+  "homepage": "https://github.com/ipikuka/rehype-code-meta#readme",
+  "bugs": {
+    "url": "https://github.com/ipikuka/rehype-code-meta/issues"
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.21.0",
+    "@types/dedent": "^0.7.2",
+    "@types/node": "^22.13.5",
+    "@vitest/coverage-v8": "^3.0.7",
+    "@vitest/eslint-plugin": "^1.1.36",
+    "dedent": "^1.5.3",
+    "eslint": "^9.21.0",
+    "eslint-config-prettier": "^10.0.2",
+    "eslint-plugin-prettier": "^5.2.3",
+    "prettier": "^3.5.2",
+    "rehype-highlight": "^7.0.2",
+    "rehype-parse": "^9.0.1",
+    "rehype-stringify": "^10.0.1",
+    "remark-flexible-code-titles": "^1.2.0",
+    "remark-gfm": "^4.0.1",
+    "remark-parse": "^11.0.0",
+    "remark-rehype": "^11.1.1",
+    "rimraf": "^5.0.10",
+    "type-coverage": "^2.29.7",
+    "typescript": "^5.7.3",
+    "typescript-eslint": "^8.25.0",
+    "unified": "^11.0.5",
+    "vfile": "^6.0.3",
+    "vitest": "^3.0.7"
+  },
+  "dependencies": {
+    "@types/hast": "^3.0.4",
+    "unist-util-visit": "^5.0.0"
+  },
+  "peerDependencies": {
+    "unified": "^11"
+  },
+  "typeCoverage": {
+    "atLeast": 100,
+    "detail": true,
+    "ignoreAsAssertion": true,
+    "strict": true
+  },
+  "sideEffects": false
+}
