@@ -16,9 +16,9 @@ This package is a **[unified][unified]** (**[rehype][rehype]**) plugin **to copy
 
 ## When should I use this?
 
-The plugin **`rehype-code-meta`** is useful if you use **[rehype-raw][rehype-raw]** hence **[hast-util-raw][hast-util-raw]** since it destroys the `code.data.meta`. Use **`rehype-code-meta`** to copy `code.data.meta` to `code.properties.metastring` to preserve tha data before **`rehype-raw`** and **`hast-util-raw`**.
+**`rehype-code-meta`** is useful if you use **[rehype-raw][rehype-raw]** (**[hast-util-raw][hast-util-raw]**) since it destroys `code.data.meta`. Use **`rehype-code-meta`** to copy `code.data.meta` to `code.properties.metastring` to preserve tha data before **`rehype-raw`** (**`hast-util-raw`**).
 
-Some `rehype` plugins utilize the information in the `code.data.meta`. Since **`rehype-raw`** destroys it, that `rehype` plugins also utilize `code.properties.metastring` in case **`rehype-raw`** is in the plugin chain.
+Some `rehype` plugins utilize `code.data.meta`. Since **`rehype-raw`** destroys it, that `rehype` plugins also utilize `code.properties.metastring` in case **`rehype-raw`** is in the plugin chain.
 
 Don't forget to remove `code.properties.metastring` in the end. The `rehype` plugins that utilize `code.properties.metastring` already remove it in most cases, hence you don't need to do anything.
 
@@ -93,7 +93,7 @@ This plugin works with `rehype-parse` version 1+, `rehype-stringify` version 1+,
 
 ## Security
 
-Use of `rehype-code-meta` involves rehype (hast), but doesn't lead to cross-site scripting (XSS) attacks.
+Use of **`rehype-code-meta`** involves rehype (hast), but doesn't lead to cross-site scripting (XSS) attacks.
 
 ## My Plugins
 
@@ -159,7 +159,6 @@ I like to contribute the Unified / Remark / MDX ecosystem, so I recommend you to
 [hast]: https://github.com/syntax-tree/hast
 [rehype-raw]: https://github.com/rehypejs/rehype-raw
 [hast-util-raw]: https://github.com/syntax-tree/hast-util-raw
-
 
 [badge-npm-version]: https://img.shields.io/npm/v/rehype-code-meta
 [badge-npm-download]:https://img.shields.io/npm/dt/rehype-code-meta
