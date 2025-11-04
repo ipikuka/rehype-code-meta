@@ -81,7 +81,7 @@ async function main() {
 }
 ```
 
-Now, running `node example.js` you see that the code lines are numbered thanks to **`rehype-code-meta`**. Otherwise, without **`rehype-code-meta`**, the **`rehype-highlight-code-lines`** can't find the information `showLineNumbers` in the `code.data.meta` due to **`rehype-raw`**.
+Now, running `node example.js` you see that the code lines are numbered thanks to **`rehype-code-meta`**. Otherwise, without **`rehype-code-meta`**, **`rehype-highlight-code-lines`** can't find the information `showLineNumbers` in the `code.data.meta` due to **`rehype-raw`**.
 
 ## Options
 
