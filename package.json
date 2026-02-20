@@ -1,6 +1,6 @@
 {
   "name": "rehype-code-meta",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "Rehype plugin to copy 'code.data.meta' to 'code.properties.metastring'",
   "type": "module",
   "main": "./dist/index.js",
