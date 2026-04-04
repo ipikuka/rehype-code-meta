@@ -8,7 +8,7 @@ import rehypeHighlightCodeLines from "rehype-highlight-code-lines";
 import rehypeStringify from "rehype-stringify";
 import type { VFileCompatible, VFile } from "vfile";
 
-import plugin from "../../src";
+import plugin from "../../src/index.js";
 
 /**
  *
